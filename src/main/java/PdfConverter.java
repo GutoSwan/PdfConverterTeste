@@ -22,7 +22,7 @@ public class PdfConverter {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
-            Document doc = builder.parse("C:\\Projetos/Pessoas.xml");
+            Document doc = builder.parse("C:\\Pessoas.xml");
 
             NodeList listaDePessoas = doc.getElementsByTagName("pessoa");
 
