@@ -41,6 +41,36 @@ public class PdfConverter {
 
                     System.out.println("ID = " + id);
 
+                    NodeList ListaDeFilhosDaPessoa = elementoPessoa.getChildNodes();
+
+                    int tamanhoListaFilho = ListaDeFilhosDaPessoa.getLength();
+
+                    for (int j = 0; j < tamanhoListaFilho; j++){
+                        Node noFilho = ListaDeFilhosDaPessoa.item(j);
+                            if(noFilho.getNodeType()== Node.ELEMENT_NODE){
+
+                                Element elementoFilho = (Element) noFilho;
+
+                                switch(elementoFilho.getTagName()){
+
+                                    case "nome":
+                                        System.out.println("Nome = " + elementoFilho.getTextContent());
+                                        break;
+
+                                    case "idade":
+                                        System.out.println("Idade = " + elementoFilho.getTextContent());
+                                        break;
+
+                                    case "peso":
+                                        System.out.println("Peso = " + elementoFilho.getTextContent());
+                                        break;
+
+                                }
+
+                            }
+
+                    }
+
                 }
 
             }
